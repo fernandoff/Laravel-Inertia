@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   env: {
     browser: true,
@@ -11,21 +12,21 @@ module.exports = {
   plugins: ["vue"],
   rules: {
     indent: ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": [2, "windows"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
 
-    "vue/order-in-components": ["error"],
-    "vue/require-default-prop": ["off"],
-    "vue/max-attributes-per-line": [
-      "error",
-      {
-        singleline: {
-          max: 2,
-          allowFirstLine: true,
-        },
-      },
-    ],
+    // "vue/order-in-components": ["error"],
+    // "vue/require-default-prop": ["off"],
+    // "vue/max-attributes-per-line": [
+    //   "error",
+    //   {
+    //     singleline: {
+    //       max: 99,
+    //       allowFirstLine: true,
+    //     },
+    //   },
+    // ],
   },
   globals: { require: true, defineProps: true },
 };

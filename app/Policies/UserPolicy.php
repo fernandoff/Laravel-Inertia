@@ -10,9 +10,14 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
+    public function list(User $user)    
+    {        
+        return $user->email == "fernando.cua@gmail.com";
+    }
+
     public function create(User $user)
     {
-        return $user->email === 'susan@doe.com';
+        return $user->email == 'fernando.cua@gmail.com';
     }
 
     public function edit(User $user, User $model)

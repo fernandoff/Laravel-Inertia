@@ -3,11 +3,11 @@
     <ul class="flex space-x-6">
       <li>
         <NavLink href="/" :active="$page.component === 'Home'">
-          Home
+          Home 
         </NavLink>
       </li>
 
-      <li>
+      <li v-if="auth.can.user.list">
         <NavLink href="/users" :active="$page.component === 'Users'">
           Users
         </NavLink>
@@ -33,5 +33,11 @@ import NavLink from "./NavLink";
 
 export default {
   components: { NavLink },
+
+  computed: {
+    auth() {
+      return this.$page.props.auth;
+    }
+  }  
 };
 </script>

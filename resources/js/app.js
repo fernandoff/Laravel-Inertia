@@ -7,9 +7,11 @@ createInertiaApp({
   resolve: name => {
     let page = require(`./Pages/${name}`).default;
 
-    if (page.layout === undefined) {
+    if(page.layout === undefined){
       page.layout = Layout;
     }
+
+    // page.layout ??= Layout;
 
     return page;
   },
@@ -26,6 +28,6 @@ createInertiaApp({
 });
 
 InertiaProgress.init({
-  color: "red",
-  showSpinner: true,
+  color: "blue",
+  showSpinner: true
 });
